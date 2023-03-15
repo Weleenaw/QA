@@ -10,8 +10,9 @@ WHERE PRICE < 500
 2)Найдите производителей принтеров. Вывести: maker
 ________
 
-SELECT DISTINCT maker
+SELECT DISTINCT maker 
 FROM Product
+WHERE Product.type='Printer'
 
 =======
 
@@ -65,6 +66,23 @@ FROM product JOIN printer ON product.model=printer.model
 WHERE maker='B'
 
 =======
+
+8)Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price
+_______
+
+SELECT model, price
+FROM printer
+Where price=(select max(price) from printer)
+
+========
+
+9)Найдите среднюю скорость ПК.
+_________
+
+SELECT AVG(speed) as speed
+From PC
+
+==========
 
 
 
